@@ -1,0 +1,148 @@
+
+.temp.file.elf:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+01000000 l    d  .init	00000000 .init
+01000058 l    d  .text	00000000 .text
+02000000 l    d  .data	00000000 .data
+02000000 l    d  .bss	00000000 .bss
+02000000 l    d  .stack	00000000 .stack
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    df *ABS*	00000000 tls.c
+00000000 l    df *ABS*	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+0000006f l       .debug_info	00000000 
+00000000 g       *ABS*	00000000 __data_size
+02000800 g       .data	00000000 __global_pointer$
+02000000 g       .bss	00000000 __tls_base
+00000800 g       *ABS*	00000000 __flash_size
+00000040 g       *ABS*	00000000 __stack_size
+00000000 g       *ABS*	00000000 __bss_size
+01000090 g     F .text	00000024 memcpy
+02000000 g       .bss	00000000 __bss_end
+00000000 g       *ABS*	00000000 __tbss_size
+01000088 g     F .text	00000008 _set_tls
+01000000 g     F .init	00000000 _start
+02000000 g       *ABS*	00000000 __ram
+02000000 g       .bss	00000000 __data_end
+010000d0 g       .text	00000000 __text_end
+02000000 g       .bss	00000000 __bss_start
+010000b4 g     F .text	0000001c memset
+01000058 g     F .text	00000030 main
+00000100 g       *ABS*	00000000 __ram_size
+02000100 g       .init	00000000 __stack
+00000000 g     F *ABS*	00000000 vfscanf
+010000d0 g       *ABS*	00000000 __data_source
+0000006f  w      .debug_info	00000000 .hidden blink_compiler_test.c.4487a49a
+01000000 g       *ABS*	00000000 __flash
+02000000 g       .data	00000000 __data_start
+00000000 g     F *ABS*	00000000 vfprintf
+
+
+
+Disassembly of section .init:
+
+01000000 <_start>:
+ 1000000:	    01000117          	auipc	x2,0x1000
+ 1000004:	    10010113          	addi	x2,x2,256 # 2000100 <__stack>
+ 1000008:	    01000197          	auipc	x3,0x1000
+ 100000c:	    7f818193          	addi	x3,x3,2040 # 2000800 <__global_pointer$>
+ 1000010:	    01000517          	auipc	x10,0x1000
+ 1000014:	    ff050513          	addi	x10,x10,-16 # 2000000 <__bss_end>
+ 1000018:	    00000597          	auipc	x11,0x0
+ 100001c:	    0b858593          	addi	x11,x11,184 # 10000d0 <__data_source>
+ 1000020:	    00000613          	addi	x12,x0,0
+ 1000024:	    06c000ef          	jal	x1,1000090 <memcpy>
+ 1000028:	    01000517          	auipc	x10,0x1000
+ 100002c:	    fd850513          	addi	x10,x10,-40 # 2000000 <__bss_end>
+ 1000030:	    00000593          	addi	x11,x0,0
+ 1000034:	    00000613          	addi	x12,x0,0
+ 1000038:	    07c000ef          	jal	x1,10000b4 <memset>
+ 100003c:	    01000517          	auipc	x10,0x1000
+ 1000040:	    fc450513          	addi	x10,x10,-60 # 2000000 <__bss_end>
+ 1000044:	    044000ef          	jal	x1,1000088 <_set_tls>
+ 1000048:	    00000513          	addi	x10,x0,0
+ 100004c:	    00000593          	addi	x11,x0,0
+ 1000050:	    008000ef          	jal	x1,1000058 <main>
+ 1000054:	/-- 0000006f          	jal	x0,1000054 <_start+0x54>
+
+Disassembly of section .text:
+
+01000058 <main>:
+     ### // Memory mapped address of LED peripheral
+     ### #define LED    (*(volatile uint32_t  *) 0x20000004)
+     ### 
+     ### int main() {
+     ###     // Set initial value for led
+     ###     LED = 0b01010101010101010101010101010101;
+ 1000058:	       555557b7          	lui	x15,0x55555
+ 100005c:	       20000737          	lui	x14,0x20000
+ 1000060:	       55578793          	addi	x15,x15,1365 # 55555555 <__global_pointer$+0x53554d55>
+ 1000064:	       00f72223          	sw	x15,4(x14) # 20000004 <__global_pointer$+0x1dfff804>
+     ###     
+     ###     // Toggle LED indefinitely with delay
+     ###     while(1) {
+     ###         LED = ~LED;
+ 1000068:	/----> 00472783          	lw	x15,4(x14)
+ 100006c:	|      fff7c793          	xori	x15,x15,-1
+ 1000070:	|      00f72223          	sw	x15,4(x14)
+ 1000074:	|      001007b7          	lui	x15,0x100
+     ###         
+     ###         // Delay loop
+     ###         for(int i=0; i<0x100000; i++)
+     ###             asm volatile("nop");
+ 1000078:	|  /-> 00000013          	addi	x0,x0,0
+     ###         for(int i=0; i<0x100000; i++)
+ 100007c:	|  |   fff78793          	addi	x15,x15,-1 # fffff <__flash_size+0xff7ff>
+ 1000080:	|  \-- fe079ce3          	bne	x15,x0,1000078 <main+0x20>
+ 1000084:	\----- fe5ff06f          	jal	x0,1000068 <main+0x10>
+
+01000088 <_set_tls>:
+ 1000088:	00050213          	addi	x4,x10,0
+ 100008c:	00008067          	jalr	x0,0(x1)
+
+01000090 <memcpy>:
+ 1000090:	       00050313          	addi	x6,x10,0
+ 1000094:	/----- 00060e63          	beq	x12,x0,10000b0 <memcpy+0x20>
+ 1000098:	|  /-> 00058383          	lb	x7,0(x11)
+ 100009c:	|  |   00730023          	sb	x7,0(x6)
+ 10000a0:	|  |   fff60613          	addi	x12,x12,-1
+ 10000a4:	|  |   00130313          	addi	x6,x6,1
+ 10000a8:	|  |   00158593          	addi	x11,x11,1
+ 10000ac:	|  \-- fe0616e3          	bne	x12,x0,1000098 <memcpy+0x8>
+ 10000b0:	\----> 00008067          	jalr	x0,0(x1)
+
+010000b4 <memset>:
+ 10000b4:	       00050313          	addi	x6,x10,0
+ 10000b8:	/----- 00060a63          	beq	x12,x0,10000cc <memset+0x18>
+ 10000bc:	|  /-> 00b30023          	sb	x11,0(x6)
+ 10000c0:	|  |   fff60613          	addi	x12,x12,-1
+ 10000c4:	|  |   00130313          	addi	x6,x6,1
+ 10000c8:	|  \-- fe061ae3          	bne	x12,x0,10000bc <memset+0x8>
+ 10000cc:	\----> 00008067          	jalr	x0,0(x1)
