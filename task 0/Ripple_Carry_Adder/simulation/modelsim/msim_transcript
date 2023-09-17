@@ -1,0 +1,76 @@
+# Reading pref.tcl
+# do RIPPLE_CARRY_ADDER_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task\ 0/Ripple_Carry_Adder {C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 07:38:24 on Sep 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder" C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder.v 
+# -- Compiling module ripple_carry_adder
+# 
+# Top level modules:
+# 	ripple_carry_adder
+# End time: 07:38:24 on Sep 15,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task\ 0/Ripple_Carry_Adder {C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/full_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 07:38:24 on Sep 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder" C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/full_adder.v 
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# End time: 07:38:24 on Sep 15,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task\ 0/Ripple_Carry_Adder {C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder_test_bench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 07:38:24 on Sep 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder" C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder_test_bench.v 
+# -- Compiling module tb_ripple_carry_adder
+# 
+# Top level modules:
+# 	tb_ripple_carry_adder
+# End time: 07:38:24 on Sep 15,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  ripple_carry_adder_test_bench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" ripple_carry_adder_test_bench 
+# Start time: 07:38:24 on Sep 15,2023
+# ** Error: (vsim-3170) Could not find 'ripple_carry_adder_test_bench'.
+#         Searched libraries:
+#             C:/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera
+#             C:/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/220model
+#             C:/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/sgate
+#             C:/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_mf
+#             C:/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_lnsim
+#             C:/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cycloneive
+#             C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/simulation/modelsim/rtl_work
+#             C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./RIPPLE_CARRY_ADDER_run_msim_rtl_verilog.do PAUSED at line 13
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" work.tb_ripple_carry_adder
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" work.tb_ripple_carry_adder 
+# Start time: 07:38:24 on Sep 15,2023
+# Loading work.tb_ripple_carry_adder
+# Loading work.ripple_carry_adder
+# Loading work.full_adder
+add wave  \
+sim:/tb_ripple_carry_adder/a \
+sim:/tb_ripple_carry_adder/b \
+sim:/tb_ripple_carry_adder/cin \
+sim:/tb_ripple_carry_adder/sum \
+sim:/tb_ripple_carry_adder/c_out
+run -all
+# End time: 07:40:29 on Sep 15,2023, Elapsed time: 0:02:05
+# Errors: 1, Warnings: 0

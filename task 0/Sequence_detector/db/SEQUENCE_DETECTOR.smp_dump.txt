@@ -1,0 +1,7 @@
+
+State Machine - |sequence_detector|state
+Name state.ST_FOUR state.ST_NINE state.ST_ZERO state.ST_ONE 
+state.ST_ONE 0 0 0 0 
+state.ST_ZERO 0 0 1 1 
+state.ST_NINE 0 1 0 1 
+state.ST_FOUR 1 0 0 1 

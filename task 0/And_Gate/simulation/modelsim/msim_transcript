@@ -1,0 +1,60 @@
+# Reading pref.tcl
+# do AND_GATE_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task\ 0 {C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/and_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:30 on Sep 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0" C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/and_gate.v 
+# -- Compiling module and_gate
+# 
+# Top level modules:
+# 	and_gate
+# End time: 21:46:30 on Sep 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task\ 0 {C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/and_gate_test_bench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:30 on Sep 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0" C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/and_gate_test_bench.v 
+# -- Compiling module and_gate_test_bench
+# 
+# Top level modules:
+# 	and_gate_test_bench
+# End time: 21:46:31 on Sep 13,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  and_gate_test_bench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" and_gate_test_bench 
+# Start time: 21:46:31 on Sep 13,2023
+# Loading work.and_gate_test_bench
+# Loading work.and_gate
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" work.and_gate_test_bench
+# End time: 21:47:45 on Sep 13,2023, Elapsed time: 0:01:14
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" work.and_gate_test_bench 
+# Start time: 21:47:45 on Sep 13,2023
+# Loading work.and_gate_test_bench
+# Loading work.and_gate
+add wave  \
+sim:/and_gate_test_bench/a \
+sim:/and_gate_test_bench/b \
+sim:/and_gate_test_bench/out
+run -all
+# End time: 21:48:56 on Sep 13,2023, Elapsed time: 0:01:11
+# Errors: 0, Warnings: 0

@@ -1,0 +1,6 @@
+|and_gate
+a => out.IN0
+b => out.IN1
+out << out.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/simulation/modelsim
+vfull_adder
+Z1 !s110 1694743704
+!i10b 1
+!s100 f;MV0=J782XoUU=@^eS1D2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5?o@=Mm<N;39EJl<NHROn0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1694742654
+8C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/full_adder.v
+FC:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/full_adder.v
+!i122 1
+L0 2 9
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1694743704.000000
+!s107 C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/full_adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder|C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/full_adder.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work {+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder}
+Z8 tCvgOpt 0
+vripple_carry_adder
+R1
+!i10b 1
+!s100 z`5`=57N^zm>ZFm7Ak<922
+R2
+I:PnNRdG8jo]X;CWTPYz>P0
+R3
+R0
+w1694742130
+8C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder.v
+FC:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder.v
+!i122 0
+L0 2 12
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder|C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder.v|
+!i113 1
+R6
+R7
+R8
+vtb_ripple_carry_adder
+R1
+!i10b 1
+!s100 odSdPUa23=fjimAPm7e_h2
+R2
+I4;IdGk9k7PzL5Lla^E[Nd1
+R3
+R0
+w1694743607
+8C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder_test_bench.v
+FC:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder_test_bench.v
+!i122 2
+L0 2 17
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder_test_bench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder|C:/Users/amuly/OneDrive/Desktop/Eyantra/task 0/Ripple_Carry_Adder/ripple_carry_adder_test_bench.v|
+!i113 1
+R6
+R7
+R8
