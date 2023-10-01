@@ -1,0 +1,27 @@
+|t1a_fs_pwm_bdf
+clk_50M => clk_50M.IN1
+duty_cycle[0] => duty_cycle[0].IN1
+duty_cycle[1] => duty_cycle[1].IN1
+duty_cycle[2] => duty_cycle[2].IN1
+duty_cycle[3] => duty_cycle[3].IN1
+pwm_signal <= pwm_generator:b2v_inst1.pwm_signal
+clk_195KHz <= pwm_generator:b2v_inst1.clk_195KHz
+clk_3125KHz <= SYNTHESIZED_WIRE_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|t1a_fs_pwm_bdf|frequency_scaling:b2v_inst
+clk_50M => ~NO_FANOUT~
+clk_3125KHz <= <GND>
+
+
+|t1a_fs_pwm_bdf|pwm_generator:b2v_inst1
+clk_3125KHz => counter_pwm.CLK
+clk_3125KHz => pwm_signal~reg0.CLK
+duty_cycle[0] => Equal0.IN6
+duty_cycle[1] => Equal0.IN5
+duty_cycle[2] => Equal0.IN4
+duty_cycle[3] => Equal0.IN3
+clk_195KHz <= <GND>
+pwm_signal <= pwm_signal~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

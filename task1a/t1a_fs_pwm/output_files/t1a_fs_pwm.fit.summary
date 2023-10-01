@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Oct 01 19:17:44 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : t1a_fs_pwm
+Top-level Entity Name : t1a_fs_pwm_bdf
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 0 / 22,320 ( 0 % )
+    Total combinational functions : 0 / 22,320 ( 0 % )
+    Dedicated logic registers : 0 / 22,320 ( 0 % )
+Total registers : 0
+Total pins : 8 / 154 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

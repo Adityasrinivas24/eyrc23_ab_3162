@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim
+vfrequency_scaling
+Z1 !s110 1696171474
+!i10b 1
+!s100 h<TQh]5h=UnWc58_S=3H>1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IR1D^g4Y<3[GPoBfmk@FUG3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1696168035
+8C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/frequency_scaling.v
+FC:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/frequency_scaling.v
+!i122 2
+L0 20 25
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1696171474.000000
+!s107 C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/frequency_scaling.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm|C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/frequency_scaling.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm
+Z8 tCvgOpt 0
+vpwm_generator
+R1
+!i10b 1
+!s100 g>];9K3QO2gEg`:k60]Qo3
+R2
+I7a]N[k[VVa7f>VYSL6^KD3
+R3
+R0
+w1696167882
+8C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/pwm_generator.v
+FC:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/pwm_generator.v
+!i122 1
+L0 20 36
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/pwm_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm|C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/pwm_generator.v|
+!i113 1
+R6
+R7
+R8
+vt1a_fs_pwm_bdf
+!s110 1696171473
+!i10b 1
+!s100 QmYW6@Qcm;YRX0Ih`S<Jl3
+R2
+I;g2Rmcmf8^Yzm1HWaEAHc3
+R3
+R0
+w1696163208
+8C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/t1a_fs_pwm_bdf.v
+FC:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/t1a_fs_pwm_bdf.v
+!i122 0
+L0 20 35
+R4
+r1
+!s85 0
+31
+!s108 1696171473.000000
+!s107 C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/t1a_fs_pwm_bdf.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm|C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/t1a_fs_pwm_bdf.v|
+!i113 1
+R6
+R7
+R8
+vtb
+!s110 1696171475
+!i10b 1
+!s100 ]58QFm9M=bVik3dYP1ggf1
+R2
+IT^BdK>NYYn7>AWPEa7_]k2
+R3
+R0
+w1696162605
+8C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim/tb.v
+FC:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim/tb.v
+!i122 3
+L0 4 93
+R4
+r1
+!s85 0
+31
+!s108 1696171475.000000
+!s107 C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim|C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim/tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim
+R8

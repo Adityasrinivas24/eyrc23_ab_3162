@@ -1,0 +1,71 @@
+# Reading pref.tcl
+# do t1a_fs_pwm_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm {C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/t1a_fs_pwm_bdf.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:14:33 on Oct 01,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm" C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/t1a_fs_pwm_bdf.v 
+# -- Compiling module t1a_fs_pwm_bdf
+# 
+# Top level modules:
+# 	t1a_fs_pwm_bdf
+# End time: 20:14:33 on Oct 01,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm {C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/pwm_generator.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:14:34 on Oct 01,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm" C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/pwm_generator.v 
+# -- Compiling module pwm_generator
+# 
+# Top level modules:
+# 	pwm_generator
+# End time: 20:14:34 on Oct 01,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm {C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/frequency_scaling.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:14:34 on Oct 01,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm" C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/frequency_scaling.v 
+# -- Compiling module frequency_scaling
+# 
+# Top level modules:
+# 	frequency_scaling
+# End time: 20:14:34 on Oct 01,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim {C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim/tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:14:35 on Oct 01,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim" C:/Users/amuly/Eyantra/task1a/t1a_fs_pwm/simulation/modelsim/tb.v 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 20:14:35 on Oct 01,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 20:14:36 on Oct 01,2023
+# Loading work.tb
+# Loading work.t1a_fs_pwm_bdf
+# Loading work.frequency_scaling
+# Loading work.pwm_generator
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 40 us
+# Error(s) encountered, please check your design!
+# End time: 20:16:30 on Oct 01,2023, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 0
