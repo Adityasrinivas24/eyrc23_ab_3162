@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim
+vt1c_pulse_gen_detect
+!s110 1697291300
+!i10b 1
+!s100 n_zGf@:25O0RNaL@fGl5_0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>WMBn<Z:Y@D;EO7=3K3Vb1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1697291159
+8C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/t1c_pulse_gen_detect.v
+FC:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/t1c_pulse_gen_detect.v
+!i122 0
+L0 21 119
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z4 !s108 1697291300.000000
+!s107 C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/t1c_pulse_gen_detect.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect|C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/t1c_pulse_gen_detect.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect
+Z6 tCvgOpt 0
+vtb
+!s110 1697291301
+!i10b 1
+!s100 2RQ1Im[@H_DRRfH<MN?1E1
+R1
+II?>4Lk0h3iW6EkF;N<k3>0
+R2
+R0
+w1697279351
+8C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim/tb.v
+FC:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim/tb.v
+!i122 1
+L0 3 120
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim|C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim/tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+C:/Users/asrin/Downloads/t1c_pulse_gen_detect/t1c_pulse_gen_detect/simulation/modelsim
+R6

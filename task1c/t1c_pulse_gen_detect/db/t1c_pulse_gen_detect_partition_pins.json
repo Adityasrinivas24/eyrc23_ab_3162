@@ -1,0 +1,125 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "trigger",
+					"strict" : false
+				},
+				{
+					"name" : "out",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[16]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[17]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[18]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[19]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[20]",
+					"strict" : false
+				},
+				{
+					"name" : "pulses[21]",
+					"strict" : false
+				},
+				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50M",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "echo_rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
