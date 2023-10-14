@@ -1,0 +1,37 @@
+|t1a_fs_pwm_bdf
+clk_50M => clk_50M.IN1
+duty_cycle[0] => duty_cycle[0].IN1
+duty_cycle[1] => duty_cycle[1].IN1
+duty_cycle[2] => duty_cycle[2].IN1
+duty_cycle[3] => duty_cycle[3].IN1
+pwm_signal << pwm_generator:b2v_inst.pwm_signal
+clk_195KHz << pwm_generator:b2v_inst.clk_195KHz
+clk_3125KHz << SYNTHESIZED_WIRE_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|t1a_fs_pwm_bdf|pwm_generator:b2v_inst
+clk_3125KHz => counter_pwm[0].CLK
+clk_3125KHz => counter_pwm[1].CLK
+clk_3125KHz => counter_pwm[2].CLK
+clk_3125KHz => counter_pwm[3].CLK
+clk_3125KHz => pwm_signal~reg0.CLK
+clk_3125KHz => counter_195[0].CLK
+clk_3125KHz => counter_195[1].CLK
+clk_3125KHz => counter_195[2].CLK
+clk_3125KHz => clk_195KHz~reg0.CLK
+duty_cycle[0] => LessThan0.IN4
+duty_cycle[1] => LessThan0.IN3
+duty_cycle[2] => LessThan0.IN2
+duty_cycle[3] => LessThan0.IN1
+clk_195KHz <= clk_195KHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pwm_signal <= pwm_signal~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|t1a_fs_pwm_bdf|frequency_scaling:b2v_inst1
+clk_50M => counter[0].CLK
+clk_50M => counter[1].CLK
+clk_50M => counter[2].CLK
+clk_50M => clk_3125KHz~reg0.CLK
+clk_3125KHz <= clk_3125KHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

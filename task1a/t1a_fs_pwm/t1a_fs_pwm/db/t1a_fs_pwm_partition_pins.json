@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pwm_signal",
+					"strict" : false
+				},
+				{
+					"name" : "clk_195KHz",
+					"strict" : false
+				},
+				{
+					"name" : "clk_3125KHz",
+					"strict" : false
+				},
+				{
+					"name" : "duty_cycle[3]",
+					"strict" : false
+				},
+				{
+					"name" : "duty_cycle[2]",
+					"strict" : false
+				},
+				{
+					"name" : "duty_cycle[1]",
+					"strict" : false
+				},
+				{
+					"name" : "duty_cycle[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50M",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
