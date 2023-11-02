@@ -1,0 +1,59 @@
+# Reading pref.tcl
+# do t2a_uart_tx_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx {C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/uart_tx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:39:44 on Nov 02,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx" C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/uart_tx.v 
+# -- Compiling module uart_tx
+# 
+# Top level modules:
+# 	uart_tx
+# End time: 11:39:44 on Nov 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim {C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim/tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:39:44 on Nov 02,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim" C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim/tb.v 
+# -- Compiling module tb
+# ** Warning: C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim/tb.v(33): (vlog-2609) indexed range expression contains whitespace between '+' and ':'.
+# 
+# Top level modules:
+# 	tb
+# End time: 11:39:45 on Nov 02,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 11:39:45 on Nov 02,2023
+# Loading work.tb
+# Loading work.uart_tx
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim/tb.v Line: 28
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/simulation/modelsim/tb.v Line: 43
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Aditya  Hostname: ADITYA  ProcessID: 18328
+#           Attempting to use alternate WLF file "./wlftthddiw".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftthddiw
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 848500 ns
+# Error(s) encountered, please check your design!
+# End time: 12:12:39 on Nov 02,2023, Elapsed time: 0:32:54
+# Errors: 0, Warnings: 4

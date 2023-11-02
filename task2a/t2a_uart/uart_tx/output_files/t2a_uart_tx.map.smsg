@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at uart_tx.v(53): always construct contains both blocking and non-blocking assignments File: C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/uart_tx.v Line: 53
+Info (10281): Verilog HDL Declaration information at uart_tx.v(27): object "data" differs only in case from object "DATA" in the same scope File: C:/Users/asrin/Downloads/t2a_uart/t2a_uart/uart_tx/uart_tx.v Line: 27

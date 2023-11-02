@@ -1,0 +1,15 @@
+# Current time Tue Oct 31 23:50:06 2023
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vsim
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+# Signature = 4a3706afe29a2b87def93ebd4f2693fa
+# 0    0x6c7345ac: 'memccpy + 0xbc' in 'c:\windows\system32\msvcr120.dll'
+# 1    0x01302ff7: '<unknown (@0x1302ff7)>'
+# 2    0x00523deb: '<unknown (@0x523deb)>'
+# 3    0x6c732aad: 'get_wpgmptr + 0x186' in 'c:\windows\system32\msvcr120.dll'
+# End of Stack Trace
+
+

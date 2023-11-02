@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rx_msg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_msg[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_complete",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50M",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
