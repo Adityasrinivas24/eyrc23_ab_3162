@@ -36,104 +36,124 @@ end
 Add your logic here
 */
 
+ reg [6:0] delay_1us;
+ reg [9:0] trigger_10us;
+ reg [16:0] read_1ms;
+ reg [15:0] pulse_width;
+ reg rec;
+ 
+ parameter WARMUP = 3'b000;
+ parameter TRIGGER = 3'b001;
+ parameter DETECT = 3'b010;
 
-	 parameter WARMUP = 2'b00;
-    parameter TRIGGER_PULSE = 2'b01;
-    parameter DETECT_PULSE = 2'b10;
-	 parameter OUTPUT = 2'b11;
-	 
+ always @(posedge clk_50M) begin
+    case (state)
+				//state 1: 1us delay
+            WARMUP: begin
+						rec = 0;
+						//reset is low
+						if (!reset) begin   
+							if (delay_1us < 7'd49) begin  //1us delay
+								delay_1us = delay_1us + 1'd1;
+							end
+							else begin  //after 1us delay
+								state = TRIGGER;
+								delay_1us = 0;
+							end	
+						end 
+						//when reset is high
+						else begin 
+							state = WARMUP;
+							pulses = 0;
+							out = 0;
+							delay_1us = 0;
+							trigger_10us = 0;
+							read_1ms = 0;
+							pulse_width = 0;
+						end
+					end
+					
+					
+					//state 2: 10us trigger
+            TRIGGER: begin
+						//reset is low
+						if (!reset) begin
+							if (trigger_10us < 10'd499) begin //trigger signal
+								trigger_10us = trigger_10us + 1'd1;
+								trigger = 1;
+							end
+							else begin  //end of trigger signal
+								state = DETECT;
+							end
+						end
+						//reset is high
+						else begin
+							state = WARMUP;
+							pulses = 0;
+							out = 0;
+							delay_1us = 0;
+							trigger_10us = 0;
+							read_1ms = 0;
+							pulse_width = 0;
+						end
+					end
+					
+					
+				// state 3: read echo and set output
+            DETECT: begin
+						trigger = 0;
+						//reset is low
+						if (!reset) begin
+							//reading 1ms pulse
+							if (read_1ms < 17'd50000) begin
+								if (echo_rx && rec == 0) begin
+									pulses = pulses + 1'd1;
+									pulse_width = pulse_width + 1'd1;
+									rec = 1;
+								end
+								else if (rec == 1 && echo_rx) begin
+									pulse_width = pulse_width + 1;
+								end
+								else if(!echo_rx && rec ==1) begin
+									rec = 0;
+								end
+								read_1ms = read_1ms + 1;
+							end
+							//generating output
+							else begin
+								if (!out) begin
+									if (pulse_width == 16'd29410) begin
+										out = 1;
+									end
+									else begin
+										out = 0;
+									end
+								end
+								else begin
+									out = 1;
+								end
+								rec = 0;
+								state = WARMUP;
+								pulse_width = 0;
+								delay_1us = 0;
+								trigger_10us = 0;
+								read_1ms = 0;
+							end 
+						end
+						//reset is high
+						else begin
+							state = WARMUP;
+							pulse_width = 0;
+							pulses = 0;
+							out = 0;
+							delay_1us = 0;
+							trigger_10us = 0;
+							read_1ms = 0;
+						end
+					end
+    endcase
+end
 
-    // Internal signals
-    reg [1:0] next_state;
-    reg [31:0] delay_counter; // 10 us delay counter
-    reg [22:0] pulse_width_counter;
-    reg [31:0] trigger_counter;// For measuring pulse width
-	
-	 initial begin
-			next_state <= WARMUP;
-	 end
-	 
-	 
-	 always @(posedge clk_50M or posedge reset) begin
-		if(reset)begin
-		      state <= 0;
-            pulses <= 0;
-            trigger <= 0;
-            out <= 0;
-            delay_counter <= 0;
-            pulse_width_counter <= 0;
-        end
-		
-		
-		else begin
-		
-			state <= next_state;
-			
-			case(state)
-			
-			         WARMUP: begin
-                    trigger <= 0;
-                    out <= 0;
-                    if (delay_counter < 50) begin
-                        delay_counter <= delay_counter + 1;
-                        next_state <= WARMUP;
-                    end
-                    else begin
-                        next_state <= TRIGGER_PULSE;
-                    end
-                end
-
-						
-						TRIGGER_PULSE:begin
-						
-						if (trigger_counter < 500) begin
-							 trigger_counter <= trigger_counter + 1;
-							trigger <= 1;
-							 next_state <= TRIGGER_PULSE;
-						 end
-						
-							out <= 0;
-							pulse_width_counter <= 0;
-							next_state <= DETECT_PULSE;
-					 end
-						
-						
-						 DETECT_PULSE:begin
-						 
-							trigger <= 0;
-							out <= 0;
-							
-							pulse_width_counter <= pulse_width_counter + 1 ;
-							
-							if (echo_rx) begin
-                        pulses <= pulse_width_counter;
-                        if (pulse_width_counter == 588200) begin
-                            out <= 1;
-                        end
-                        pulse_width_counter <= 0;
-                        next_state <= OUTPUT;
-                    end
-                    else begin
-                        next_state <= DETECT_PULSE;
-                    end
-                end
-							
-						
-						 OUTPUT: begin
-						 
-                    trigger <= 0;
-                    out <= 1;
-                    next_state <= WARMUP;
-                end
-				endcase
-			end
-		end
-		
-		
-			
-			
-			
-		
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
 
 endmodule
