@@ -32,60 +32,53 @@ module uart_rx (
 
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
 
-////////////////////////// Add your code here
+////////////////////////// Add your code here ////////////////////////////
 
 
 
+parameter CLKS_PER_BIT = 50000000/115200;
 
-parameter CLKS_PER_BIT = 434;
+parameter IDLE  = 2'b00;
+parameter START = 2'b01;
+parameter DATA =  2'b10;
+parameter STOP  = 2'b11;
 
-parameter IDLE  = 3'b000;
-parameter START = 3'b001;
-parameter DATA =  3'b010;
-parameter STOP  = 3'b011;
-parameter CLEAN = 3'b100;
 
 reg [9:0] clk_count;
-reg [2:0] state;
+reg [1:0] state;
 reg [2:0] bitIdx;
 reg [7:0] data_store;
 
 initial begin
 
-rx_msg = 0; rx_complete = 0;
-bitIdx = 0;
+rx_msg = 0; rx_complete = 0; clk_count = 0; 
 
 end
 
-always @(posedge clk_50M) begin
+always @(posedge clk_50M or negedge rx) begin
 	
 	case(state)
 		
 		IDLE:begin
-			rx_complete <= 1'b0;   //
-         bitIdx <= 0;
-				
-          if (rx == 1'b0) begin
-			   clk_count <= 0;
-            state <= START;
-			 end else
-            state <= IDLE;
+			rx_complete <= 1'b0;  
+         bitIdx <= 3'b0;
+	
+			if (rx == 1'b0) begin
+			  clk_count <= 0;
+           state = START;
+			 end
         end
 	
 		
 		START:begin
 		
-          if (clk_count == CLKS_PER_BIT-12)begin  
-            if (rx == 1'b0)begin
-              clk_count <= 0;  //
-              state <= DATA;   //
-            end else
-              state <= IDLE;
-          end
-			 
+          if (clk_count == CLKS_PER_BIT-1 && rx == 1'b0)begin
+              clk_count = 0;
+              state = DATA;   
+				end 
+      
           else begin
             clk_count <= clk_count + 1;
-            state <= START;
           end
         end		
 	
@@ -93,66 +86,50 @@ always @(posedge clk_50M) begin
 	
 		DATA:begin
 			 
-          if (clk_count < CLKS_PER_BIT)begin
+          if (clk_count < CLKS_PER_BIT- 1)begin
             clk_count <= clk_count + 1;
-            state <= DATA;    //
-          end
-			 
-          else begin
+                
+          end else  begin
             clk_count = 0;
             data_store[bitIdx] <= rx;
            
-            if (bitIdx == 7)begin
-					bitIdx <= 0;
+            if (bitIdx == 3'd7)begin
+					bitIdx <= 3'd0;
               state = STOP;
             end
 				
             else begin
-              
-              state <= DATA;
 				  bitIdx <= bitIdx + 1;
             end
-			
-			
         end 
+		  
       end 
 	
 	
 		 STOP:begin
      
-          if (clk_count < CLKS_PER_BIT)begin
+          if (clk_count < CLKS_PER_BIT -2)begin
            clk_count <= clk_count + 1;
-			  state = STOP;
           end
 			 
           else begin
-            clk_count <= 0;
-				rx_msg = {data_store[0], data_store[1], data_store[2], data_store[3], data_store[4], data_store[5], data_store[6], data_store[7]};
-            state = CLEAN;
+            clk_count = 10'd0;
+				rx_msg = {data_store[0], data_store[1], data_store[2], data_store[3], data_store[4], data_store[5], data_store[6], data_store[7]}>>1;
+        
+            state = IDLE;
+            rx_complete = (rx_msg != 8'd0) ? 1'b1 : 1'b0;
 				
         end
       end 
 		  
-		  
-		CLEAN:begin
-			state <= IDLE;
-			
-			if(rx_msg !=0) begin
-			  rx_complete <= 1'b1;
-			end
-			else begin
-			  rx_complete <= 1'b0;
-			end
-		end
-		  
-
-		default: state <= IDLE;
-		
-			
+		default: state = IDLE;
 	
      endcase
 	end
 
+		
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
 
 endmodule
+
+
