@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "clk_50M",
+					"strict" : false
+				},
+				{
 					"name" : "data[0]",
 					"strict" : false
 				},
@@ -37,10 +41,6 @@
 				},
 				{
 					"name" : "data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "clk_50M",
 					"strict" : false
 				}
 			]

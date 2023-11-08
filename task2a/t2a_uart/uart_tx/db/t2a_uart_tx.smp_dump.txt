@@ -1,7 +1,6 @@
 
 State Machine - |uart_tx|state
-Name state.STOP state.DATA state.START state.IDLE 
-state.IDLE 0 0 0 0 
-state.START 0 0 1 1 
-state.DATA 0 1 0 1 
-state.STOP 1 0 0 1 
+Name state.START state.STOP state.DATA 
+state.START 0 0 0 
+state.DATA 1 0 1 
+state.STOP 1 1 0 

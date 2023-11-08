@@ -30,109 +30,95 @@ module uart_tx(
 
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
 
-parameter CLKS_PER_BIT = 434;
-parameter IDLE = 2'b00;
-parameter START = 2'b01;        
-parameter DATA = 2'b10;         
-parameter STOP = 2'b11;        
+parameter CLKS_PER_BIT = 434; //50000000/115200;
+parameter START = 2'b00;        
+parameter DATA = 2'b01;         
+parameter STOP = 2'b10;        
 
 
 reg [1:0] state;
-reg [9:0] clk_count = 0;
+reg [9:0] clk_count;
 reg [2:0] bitIdx;
 reg [7:0] data_store;
 
-
 initial begin
-	 tx <= 0;
+	 tx = 0;
+	 clk_count = 10'd0;
 end
 
 
-////////// Add your code here ///////////////////
-
 always@(posedge clk_50M)begin
-
+	
+	data_store <= data;
+	
 	case(state)
-		
-		
-		IDLE:begin
-			if(clk_count < 8*CLKS_PER_BIT)begin
-				if(data == 8'b00000000)begin
-					tx <= 1'b1;
-				end else begin
-					tx <= 0;
-					clk_count <= 0;
-					state <= START;
-				end 
-				clk_count <= clk_count + 1;
-			end else begin
-				tx <= 1;
-				state <= IDLE;
-		 end
-		end
-		
-		
+
 		 START:begin
-			if(clk_count < CLKS_PER_BIT - 4)begin
-				tx <= 1'b0;
+		 
+			if(clk_count < CLKS_PER_BIT-1)begin
 				clk_count <= clk_count + 1;
-				state <= START;
-			end
+				
+				if(data_store == 8'b00000000)begin
+					tx<= 1'b1;
+				end
 			
-			else begin
-				clk_count <= 0;
-				bitIdx <= 0;
-				state <= DATA;
-			end
-		end
-		
-		
-		
-		 DATA:begin
-			 if(clk_count <= CLKS_PER_BIT)begin
-					tx <= data_store[bitIdx];
-					clk_count <= clk_count + 1;
-               state <= DATA;
-			 end
 				
-			else begin
-				clk_count <= 0;
-				
-				if(bitIdx == 7)begin
-					bitIdx <= 0;
-					state <= STOP;
+				else if(clk_count == 432)begin
+					clk_count <= 10'd0;
+					bitIdx = 0;
+					state = DATA;
 				end
 				
 				else begin
+					tx<= 1'b0;
+				end
+			end
+		end
+		
+	
+		 DATA:begin
+			 tx <= data_store[bitIdx];
+			 
+			 if(clk_count < CLKS_PER_BIT-1)begin
+					clk_count <= clk_count + 1;
+					
+			 end else begin
+				clk_count <= 10'd0;
+			
+				if(bitIdx == 3'd7)begin
+					bitIdx <= 3'd0;
+					state = STOP;
+				end else begin
 					bitIdx <= bitIdx + 1;
-					state <= DATA;
+					
 				end
 			end				
 		end
 		
-
 		
-		 STOP:begin 
+		 STOP:begin
+			
 			if(clk_count < CLKS_PER_BIT)begin
 					tx = 1'b1;
 					clk_count <= clk_count + 1;
-               state <= STOP;
-			end
-			
-			else begin
-					clk_count = 0;
-					state <= IDLE;
+					state<= STOP;
+			end else begin
+					tx = 1'b0;
+					state <= START;
+               clk_count <= 10'd0;	
 			end
 		end
 			
 			
-		default:state <= IDLE;
-		
+		default:begin
+			state = START;
+		end
 	endcase
 	
-	data_store <= data;
+	
+	
 end
-
+////////// Add your code here ///////////////////
 
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
 
