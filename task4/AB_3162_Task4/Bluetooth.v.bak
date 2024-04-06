@@ -1,0 +1,55 @@
+module Bluetooth(
+    input clk_50M,
+    input rx,
+    output tx
+);
+
+parameter IDLE = 2'b00;
+parameter RECEIVING = 2'b01;
+parameter MSG_LENGTH = 11; // Assuming messages are 8 characters long
+
+reg [2:0] state;
+wire [7:0] rx_msg;
+wire rx_complete;
+
+uart_rx uart_rx_inst(
+        .clk_50M(clk_50M),
+        .rx(rx),
+        .rx_msg(rx_msg),
+        .rx_complete(rx_complete)
+        );
+
+uart_tx uart_tx_inst(
+        .clk_50M(clk_50M),
+        .data(rx_msg),
+        .tx_en(rx_complete),
+        .tx(tx)
+        );
+
+always @(posedge clk_50M) begin
+    case (state)
+        IDLE: begin
+            if (rx_complete) begin
+                state <= RECEIVING;
+            end
+        end
+
+        RECEIVING: begin
+            // Process the received character
+            // You can add your custom logic here
+            // For example, you can print or store the character
+            
+            // Move to the next state or go back to IDLE when the message is complete
+            if (rx_complete) begin
+                if (rx_msg == "IFM-CSU-#") begin
+                    // Do something when the complete message is received
+                end
+                state <= IDLE;
+            end
+        end
+
+        default: state <= IDLE;
+    endcase
+end
+
+endmodule

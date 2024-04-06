@@ -1,0 +1,14 @@
+module Node_Finder( input clk_50M,input [11:0] left_value,input [11:0] center_value,input [11:0] right_value,output reg node_found);
+
+always @(posedge clk_50M) begin
+    if (left_value < right_value) begin
+        node_found = 1;
+    end else if (left_value == right_value) begin
+        node_found = 1; 
+    end else begin
+        node_found = 0; // Not a node
+    end
+end
+
+
+endmodule 

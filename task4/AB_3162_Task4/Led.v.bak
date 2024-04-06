@@ -1,0 +1,35 @@
+module Led(
+    input rst,
+    input fault_detect,
+    input node_changed,
+    output reg [2:0] rgb_led_1,
+    output reg [2:0] rgb_led_2,
+    output reg [2:0] rgb_led_3
+);
+
+parameter OFF = 3'b000;
+parameter BLUE = 3'b001;
+parameter RED = 3'b100;
+parameter GREEN = 3'b010;
+
+always @(posedge rst or posedge fault_detect or posedge node_changed) begin
+        if (rst) begin
+            rgb_led_1 <= OFF;
+            rgb_led_2 <= OFF;
+            rgb_led_3 <= OFF;
+        end else begin
+            // If fault_detect is high, set all LEDs to Blue
+            if (fault_detect) begin
+                rgb_led_1 <= BLUE;
+                rgb_led_2 <= BLUE;
+                rgb_led_3 <= BLUE;
+            end
+            // If node_changed is high, turn off all LEDs
+            else if (node_changed) begin
+                rgb_led_1 <= OFF;
+                rgb_led_2 <= OFF;
+                rgb_led_3 <= OFF;
+            end
+        end
+    end
+endmodule 

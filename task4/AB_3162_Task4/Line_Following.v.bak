@@ -1,0 +1,114 @@
+// This module will be used to configure the LFA and identify the path and nodes
+
+module Line_Following(
+		input clk_50M,
+		input dout,
+		output A1A,
+		output A1B,
+		output B1A,
+		output B1B,
+		output adc_cs_n,			        //ADC128S022 Chip Select
+		output din,				           //Ch. address input to ADC128S022 
+		output adc_sclk,		           //3.125 MHz ADC clock
+		output [11:0]left_value,	     //12-bit output of channel 4  1    
+		output [11:0]center_value,	     //12-bit output of channel 3  4 
+		output [11:0]right_value,		  //12-bit output of channel 1  3
+		output wire signed [8:0] delta	  		
+);
+
+reg signed [8:0] duty_cycle1;
+reg signed [8:0] duty_cycle2;
+
+wire adc_clk_out;
+
+Frequency_Scaling frequency_scaler(.clk_50M(clk_50M),.adc_clk_out(adc_clk_out));
+
+ADC_Controller adc_control(.dout(dout), .adc_sck(adc_clk_out),
+						 .adc_cs_n(adc_cs_n), .din(din),
+                   .left_value(left_value),.center_value(center_value),.right_value(right_value));
+
+Motor motor_control(
+    .clk_50M(clk_50M),
+    .delta(delta),
+    .A1A(A1A),
+    .A1B(A1B),
+    .B1A(B1A),
+    .B1B(B1B)
+);
+
+PID_Controller pid_control(
+    .clk(clk_50M),
+    .left_value(left_value),
+    .center_value(center_value),
+    .right_value(right_value),
+    .delta(delta)
+);
+
+
+//parameter Kp = 9'd4;
+//parameter Kd = 9'd3;
+//parameter Ki = 9'd0;
+//parameter thr = 12'd350;	
+//
+//reg bool_left;
+//reg bool_center;
+//reg bool_right;
+//
+//reg signed [8:0] error = 9'd0;
+//reg signed [8:0] prev_error = 9'd0;
+//reg signed [8:0] diff_error = 9'd0;
+//reg signed [8:0] sum_error = 9'd0;
+////reg signed [8:0] delta;
+//
+//
+//reg [7:0] optimum_pwm = 8'd22	;
+//
+//always @ (posedge clk_50M) begin
+//    
+//	 if(left_value > thr) bool_left <= 1;
+//	 else            bool_left <= 0;
+//    
+//	 if(center_value > thr) bool_center <= 1;
+//	 else            bool_center <= 0;
+//	 
+//    if(right_value > thr) bool_right <= 1;
+//    else            bool_right <= 0;
+//
+//    case({bool_left,bool_center,bool_right})
+//        
+//		  3'b010: begin 
+//                error <= 0;
+//                sum_error <= 0;
+//                end
+//					 
+//        3'b011: error <= 9'd3;
+//        
+//		  3'b001: error <= 9'd5;
+//        
+//		  3'b110: error <= -9'd3;
+//        
+//		  3'b100: error <= -9'd5;
+//        
+//		  3'b000: error <= prev_error ;
+//		  
+//    endcase
+//	 
+//    diff_error <= prev_error - error;
+//    sum_error <= sum_error + error;
+//	 prev_error <= error;
+//	 
+//    if(sum_error > 9'b00011110)
+//        sum_error <= 9'b00011110;
+//    if(sum_error < 9'b011100010)
+//        sum_error <= 9'b011100010;
+//
+//    delta <= Kp * error + Kd * diff_error + Ki * sum_error;
+//
+//    duty_cycle1 <= optimum_pwm - delta;
+//    duty_cycle2 <= optimum_pwm + delta;
+//end
+//					 
+assign adc_sclk = adc_clk_out;
+
+
+endmodule

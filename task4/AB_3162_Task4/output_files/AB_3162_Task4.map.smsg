@@ -1,0 +1,6 @@
+Warning (10268): Verilog HDL information at Detect_Change.v(22): always construct contains both blocking and non-blocking assignments File: C:/Users/asrin/Downloads/AB_3162_Task4/Detect_Change.v Line: 22
+Info (10281): Verilog HDL Declaration information at Detect_Change.v(7): object "fault_detect" differs only in case from object "FAULT_DETECT" in the same scope File: C:/Users/asrin/Downloads/AB_3162_Task4/Detect_Change.v Line: 7
+Info (10281): Verilog HDL Declaration information at Detect_Change.v(8): object "node_changed" differs only in case from object "NODE_CHANGED" in the same scope File: C:/Users/asrin/Downloads/AB_3162_Task4/Detect_Change.v Line: 8
+Warning (10268): Verilog HDL information at uart_tx.v(50): always construct contains both blocking and non-blocking assignments File: C:/Users/asrin/Downloads/AB_3162_Task4/uart_tx.v Line: 50
+Info (10281): Verilog HDL Declaration information at uart_tx.v(27): object "data" differs only in case from object "DATA" in the same scope File: C:/Users/asrin/Downloads/AB_3162_Task4/uart_tx.v Line: 27
+Warning (10268): Verilog HDL information at Line_Following.v(36): always construct contains both blocking and non-blocking assignments File: C:/Users/asrin/Downloads/AB_3162_Task4/Line_Following.v Line: 36

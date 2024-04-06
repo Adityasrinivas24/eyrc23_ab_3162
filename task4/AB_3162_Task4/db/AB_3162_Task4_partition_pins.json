@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rgb_led_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rgb_led_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rgb_led_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "node_changed",
+					"strict" : false
+				},
+				{
+					"name" : "fault_detect",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
